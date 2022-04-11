@@ -5,7 +5,7 @@ from tkinter import *               # импортировать базовый 
 from tkinter.messagebox import *    # импортировать стандартные диалоги
 
 def notdone():
-    showerror('Not implemented', 'Not yet avialable')
+    showerror('Not implemented', 'Not yet available')
 
 def makemenu(win):
     top = Menu(win)                 # win = окно верхнего уровня. Прикрепить Menu к окну
