@@ -9,7 +9,7 @@ from tkinter.messagebox import *
 def notdone():
     showerror('Not implemented', 'Not yet available')
 
-def makemanu(parent):
+def makemenu(parent):
     menubar = Frame(parent)                 # relief=RAISED, bd=2... создать фрейм для строки меню
     menubar.pack(side=TOP, fill=X)
 
@@ -39,7 +39,7 @@ def makemanu(parent):
 if __name__ == '__main__':
     root  = Tk()                    # или TopLevel, или Frame
     root.title('menu_frm')          # информация для менеджера окон
-    makemanu(root)                  # создать строку меню
+    makemenu(root)                  # создать строку меню
     msg = Label(root, text='Frame menu basics') # добавить что-нибудь ниже
     msg.pack(expand=YES, fill=BOTH)
     msg.config(relief=SUNKEN, width=40, height=7, bg='beige')
