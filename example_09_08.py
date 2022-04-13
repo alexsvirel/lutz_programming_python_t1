@@ -16,6 +16,7 @@
 - как добавлять изображения в пункты меню (присвоить атрибуту image ссылку на объект PhotoImage)
 - как делать пункты меню недоступными для выбора, изображая их в серых тонах (вызвать метод меню
   entryconfig, передав ему индекс отключаемого пункта; отсчет начинается с 1)
+- изменяет форму указателя мыши над панелью инструментов
 
 Объекты PhotoImage сохраняются в виде списка – в отличие от других виджетов, они будут утеряны,
 если не сохранить ссылки на них.
@@ -73,7 +74,7 @@ class NewMenuDemo(Frame):  # расширенный фрейм
         pulldown = Menu(self.menubar)
         self.photoObjs = []
         for file in photoFiles:
-            img = PhotoImage(file='D:/Python/lutz/PP4E-Examples-1.4/Examples/PP4E/Gui/gifs/' + file)
+            img = PhotoImage(file='../../PP4E-Examples-1.4/Examples/PP4E/Gui/gifs/' + file)
             pulldown.add_command(image=img, command=self.notdone)
             self.photoObjs.append(img)  # сохранить ссылку
         self.menubar.add_cascade(label='Image', underline=0, menu=pulldown)
