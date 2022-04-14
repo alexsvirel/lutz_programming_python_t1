@@ -9,13 +9,14 @@
 """
 from tkinter import *
 
+
 class ScrolledList(Frame):
     def __init__(self, options, parent=None):
         Frame.__init__(self, parent)
         self.pack(expand=YES, fill=BOTH)            # сделать растягиваемым
         self.makeWidgets(options)
 
-    def handleList(self, event):
+    def handleList(self):
         index = self.listbox.curselection()         # при двойном щелчке на списке
         label = self.listbox.get(index)             # извлечь выбранный текст
         self.runCommand(label)                      # и вызвать действие или get(ACTIVE)
@@ -37,6 +38,7 @@ class ScrolledList(Frame):
 
     def runCommand(self, selection):                # необходимо переопределить
         print('You selected:', selection)
+
 
 if __name__ == '__main__':
     options = (('Lumberjack-%s' % x) for x in range(20)) # или map/lambda,
