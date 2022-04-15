@@ -31,8 +31,8 @@ class ScrolledText(Frame):
         if file:
             text = open(file, 'r').read()
         self.text.delete('1.0', END)                    # удалить текущий текст
-        self.text.insert('1.0', text)                   # добавить в стр. 1, кол. 0
-        self.text.mark_set(INSERT, '1.0')               # установить курсор вставки
+        self.text.insert('1.0', text)                   # добавить в начало (строка 1, колонка 0)
+        self.text.mark_set(INSERT, '1.0')               # установить курсор вставки в начало
         self.text.focus()                               # сэкономить щелчок мышью
 
     def gettext(self):
