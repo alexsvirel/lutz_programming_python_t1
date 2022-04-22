@@ -22,7 +22,8 @@ from tkinter import *
 colors = ['white', 'red', 'orange', 'yellow', 'green', 'light blue', 'blue', 'brown', 'black']
 
 def gridbox(root):
-    Label(root, text='Grid').grid(columnspan=2)
+    Label(root, text='Grid').grid(columnspan=2)     # объединение колонок - columnspan
+                                                    # объединениt рядов - rowspan
     row = 1
     for color in colors:
         lab = Label(root, text=color, relief=RIDGE, width=25)
