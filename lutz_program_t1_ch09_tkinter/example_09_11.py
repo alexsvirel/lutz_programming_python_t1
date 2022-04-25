@@ -11,7 +11,7 @@ from tkinter import *
 from tkinter.simpledialog import askstring
 from tkinter.filedialog import asksaveasfilename
 
-from lutz_program_t1_ch08_tkinter.examples.quitter import Quitter as Quitter
+from lutz_program_t1_ch08_tkinter.examples.quitter import Quitter
 from example_09_10 import ScrolledText as ScrolledText
 
 
