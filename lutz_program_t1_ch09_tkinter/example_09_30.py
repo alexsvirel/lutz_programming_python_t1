@@ -30,7 +30,7 @@ from tkinter import *
 
 import example_09_16
 
-class CanvasEventDemo(example_09_16.CanvasEventsDemo):
+class CanvasEventsDemo(example_09_16.CanvasEventsDemo):
     def __init__(self, parent=None):
         example_09_16.CanvasEventsDemo.__init__(self, parent)
         self.canvas.master.bind('<KeyPress-o>', self.onMoveOvals)
@@ -64,5 +64,5 @@ class CanvasEventDemo(example_09_16.CanvasEventsDemo):
 
 
 if __name__ == '__main__':
-    CanvasEventDemo()
+    CanvasEventsDemo()
     mainloop()
