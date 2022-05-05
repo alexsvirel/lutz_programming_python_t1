@@ -55,7 +55,7 @@ class GuiMaker(Frame):
                 menu.add_separator({})
             elif type(item) == list:  # список: неактивных элементов
                 for num in item:
-                    menu.add_entryconfig(num, state=DISABLED)
+                    menu.entryconfig(num, state=DISABLED)
             elif type(item[2]) != list:
                 menu.add_command(label=item[0],  # команда: метка
                                  underline=item[1],  # горячая клавиша
@@ -116,6 +116,11 @@ GuiMakerFrameMenu = GuiMaker  # используется для меню вст�
 
 
 class GuiMakerWindowMenu(GuiMaker):  # используется для меню окна верхнего уровня
+    """
+    Реализует меню окон верхнего уровня в стиле Tk 8.0, которые удобно использовать
+    в самостоятельных программах и всплывающих окнах.
+    """
+
     def makeMenuBar(self):
         menubar = Menu(self.master)
         self.master.config(menu=menubar)
