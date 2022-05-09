@@ -45,7 +45,7 @@ class ShellGui(GuiMixin, GuiMakerWindowMenu): # фрейм + конструкт�
         list.pack(side=LEFT, expand=YES, fill=BOTH)  # список обрез-ся первым
         for (label, action) in self.fetchCommands():  # добавляется в список,
             list.insert(END, label)  # в меню и на панель инстр.
-        list.bind('< Double - 1 >', self.handleList)  # установить обработчик
+        list.bind('<Double-1>', self.handleList)  # установить обработчик
         self.listbox = list
 
     def forToolBar(self, label):  # поместить на панель инстр.?
