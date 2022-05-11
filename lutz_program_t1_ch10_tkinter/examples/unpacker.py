@@ -1,7 +1,7 @@
 # unpack files created by packer.py (simple textfile archive)
 
 import sys
-from examples.packer import marker             # use common separator key
+from example_10_07 import marker             # use common separator key
 mlen = len(marker)                    # filenames after markers
 
 def unpack(ifile, prefix='new-'):
