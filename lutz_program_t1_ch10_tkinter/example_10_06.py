@@ -12,7 +12,7 @@
 """
 from example_10_05 import * # интерфейсы, специфичные для типов
 from example_10_10 import runPackDialog # диалоги для ввода данных
-from examples.unpkdlg import runUnpackDialog # оба используют классы приложений
+from example_10_11 import runUnpackDialog # оба используют классы приложений
 
 class TextPak1(ListMenuGui):
     def __init__(self):
