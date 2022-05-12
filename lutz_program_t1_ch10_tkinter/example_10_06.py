@@ -11,8 +11,8 @@
 другой набор имен утилит, нужно написать и использовать новый подкласс.
 """
 from example_10_05 import * # интерфейсы, специфичные для типов
-from lutz_program_t1_ch10_tkinter.examples.packdlg import runPackDialog # диалоги для ввода данных
-from lutz_program_t1_ch10_tkinter.examples.unpkdlg import runUnpackDialog # оба используют классы приложений
+from examples.packdlg import runPackDialog # диалоги для ввода данных
+from examples.unpkdlg import runUnpackDialog # оба используют классы приложений
 
 class TextPak1(ListMenuGui):
     def __init__(self):

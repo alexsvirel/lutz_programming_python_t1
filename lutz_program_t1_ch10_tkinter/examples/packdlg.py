@@ -3,7 +3,7 @@
 from glob import glob                           # filename expansion
 from tkinter import *                           # GUI widget stuff
 from example_10_07 import pack                         # use pack script/module
-from examples.formrows import makeFormRow                # use form builder tool
+from example_10_09 import makeFormRow                # use form builder tool
 
 def packDialog():                               # a new top-level window
     win = Toplevel()                            # with 2 row frames + ok button

@@ -1,8 +1,8 @@
 # popup a GUI dialog for unpacker script arguments, and run it
 
 from tkinter import *                             # widget classes
-from examples.unpacker import unpack                       # use unpack script/module
-from examples.formrows import makeFormRow                  # form fields builder
+from example_10_08 import unpack                       # use unpack script/module
+from example_10_09 import makeFormRow                  # form fields builder
 
 def unpackDialog():
     win = Toplevel()
