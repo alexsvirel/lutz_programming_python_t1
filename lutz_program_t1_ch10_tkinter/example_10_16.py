@@ -21,7 +21,7 @@ class _window:
     """
     foundicon = None  # совместно используется всеми экземплярами
     iconpatt = '*.ico'  # может быть сброшен
-    iconmine = 'py.ico'
+    iconmine = 'images\py.ico'
 
     def configBorders(self, app, kind, iconfile):
         if not iconfile:  # ярлык не был передан?
