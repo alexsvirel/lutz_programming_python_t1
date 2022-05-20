@@ -14,6 +14,7 @@ from tkinter.messagebox import showinfo
 
 class GuiMaker(Frame):
     """
+    графический интерфейс
     класс GuiMaker выполняет обход структур с описанием меню и панели инструментов
     и создает соответствующие виджеты.
     """
@@ -33,7 +34,6 @@ class GuiMaker(Frame):
         """
         создает полосу меню вверху (реализация меню Tk8.0 приводится ниже)
         expand=no, fill=x, чтобы ширина оставалась постоянной
-        :return:
         """
         menubar = Frame(self, relief=RAISED, bd=2)
         menubar.pack(side=TOP, fill=X)
@@ -50,6 +50,9 @@ class GuiMaker(Frame):
                    cursor='gumby', relief=FLAT, command=self.help).pack(side=RIGHT)
 
     def addMenuItems(self, menu, items):
+        """
+        добавить пункты меню
+        """
         for item in items:  # сканировать список вложенных элементов
             if item == 'separator':  # строка: добавить разделитель
                 menu.add_separator({})
@@ -73,7 +76,6 @@ class GuiMaker(Frame):
         чтобы ширина оставалась постоянной можно добавить поддержку изображений:
         смотрите главу 9, для чего придется создать минатюры в формате FIF или
         использовать расширение PIL
-        :return:
         """
         if self.toolBar:
             toolbar = Frame(self, cursor='hand2', relief=SUNKEN, bd=2)
@@ -88,7 +90,6 @@ class GuiMaker(Frame):
         переопределите этот метод,
         для pack: прикрепляйте середину к любому краю;
         для grid: компонуйте середину по сетке во фрейме, который прикрепляется методом pack
-        :return:
         """
         name = Label(self, width=40, height=10, relief=SUNKEN, bg='white',
                      text=self.__class__.__name__, cursor='crosshair')
@@ -109,12 +110,11 @@ class GuiMaker(Frame):
         pass
 
 
+GuiMakerFrameMenu = GuiMaker  # используется для меню встраиваемых компонентов
+
 ##############################################################################
 # Специализированная версия для полосы меню главного окна Tk 8.0
 ##############################################################################
-GuiMakerFrameMenu = GuiMaker  # используется для меню встраиваемых компонентов
-
-
 class GuiMakerWindowMenu(GuiMaker):  # используется для меню окна верхнего уровня
     """
     Реализует меню окон верхнего уровня в стиле Tk 8.0, которые удобно использовать
@@ -122,6 +122,9 @@ class GuiMakerWindowMenu(GuiMaker):  # используется для меню 
     """
 
     def makeMenuBar(self):
+        """
+        создает полосу меню вверху
+        """
         menubar = Menu(self.master)
         self.master.config(menu=menubar)
 
