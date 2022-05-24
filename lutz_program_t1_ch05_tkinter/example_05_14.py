@@ -1,4 +1,5 @@
 """
+пример в книге - queuetest.py
 Взаимодействие потоков производителей и потребителей посредством очереди
 
 Сценарий в примере 5.14 порождает два потока-потребителя, ко-
@@ -11,22 +12,27 @@
 обращаются к общей очереди параллельно.
 """
 
-numconsumers = 2                  # количество потоков-потребителей
-numproducers = 4                  # количество потоков-производителей
-nummessages  = 4                  # количество сообщений, помещаемых производителем
+numconsumers = 2  # количество потоков-потребителей
+numproducers = 4  # количество потоков-производителей
+nummessages = 4  # количество сообщений, помещаемых производителем
 
-import _thread as thread, queue, time
-safeprint = thread.allocate_lock()    # в противном случае вывод может перемешиваться
+import _thread as thread
+import queue
+import time
+
+safeprint = thread.allocate_lock()  # в противном случае вывод может перемешиваться
 
 # ссылка на очередь сохраняется в глобальной переменной. Благодаря этому очередь может
 # использоваться всеми порожденными потоками выполнения (все они выполняются в одном
 # процессе и в одном глобальном пространстве имен):
-dataQueue = queue.Queue()             # общая очередь неограниченного размера
+dataQueue = queue.Queue()  # общая очередь неограниченного размера
+
 
 def producer(idnum):
     for msgnum in range(nummessages):
         time.sleep(idnum)
         dataQueue.put('[producer id=%d, count=%d]' % (idnum, msgnum))
+
 
 def consumer(idnum):
     while True:
@@ -39,10 +45,11 @@ def consumer(idnum):
             with safeprint:
                 print('consumer', idnum, 'got =>', data)
 
+
 if __name__ == '__main__':
     for i in range(numconsumers):
         thread.start_new_thread(consumer, (i,))
     for i in range(numproducers):
         thread.start_new_thread(producer, (i,))
-    time.sleep(((numproducers-1) * nummessages) + 1)
+    time.sleep(((numproducers - 1) * nummessages) + 1)
     print('Main thread exit.')
