@@ -1,6 +1,9 @@
 # графический интерфейс, отображающий данные, производимые рабочими потоками
 
-import _thread, queue, time
+import _thread
+import queue
+import time
+
 dataQueue = queue.Queue()    # бесконечной длины
 
 def producer(id):
