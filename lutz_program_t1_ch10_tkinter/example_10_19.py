@@ -8,7 +8,7 @@ from tkinter.scrolledtext import ScrolledText  # or PP4E.Gui.Tour.scrolledtext
 
 
 class ThreadGui(ScrolledText):
-    threadsPerClick = 4
+    threadsPerClick = 5
 
     def __init__(self, parent=None):
         ScrolledText.__init__(self, parent)
