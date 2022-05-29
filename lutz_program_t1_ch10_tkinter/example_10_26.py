@@ -4,7 +4,7 @@
 
 # from example_10_12 import redirectedGuiShellCmd             # использует GuiOutput
 from example_10_12 import *
-redirectedGuiShellCmd('python -u examples/pipe-nongui.py')  # -u: без буферизации
+redirectedGuiShellCmd('python -u example_10_27.py')  # -u: без буферизации
 # ключ -u командной строки интерпретатора # Python, используемый здесь,
 # принудительно отключает буферизацию потока стандартного вывода запускаемой
 # программы, поэтому мы получаем печатаемый текст немедленно и нам не приходится

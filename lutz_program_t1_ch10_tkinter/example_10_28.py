@@ -6,7 +6,7 @@ from example_10_12 import redirectedGuiShellCmd
 
 
 def launch():
-    redirectedGuiShellCmd('python -u examples/pipe-nongui.py')
+    redirectedGuiShellCmd('python -u example_10_27.py')
 
 
 window = Tk()
