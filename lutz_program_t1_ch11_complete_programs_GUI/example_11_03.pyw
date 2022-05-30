@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """
 Удобный сценарий для запуска pyedit из произвольного каталога, выполняет
-необходимую корректировку пути поиска модулей;
+необходимую корректировку пути поиска модулей (pyedit.pyw)
 
 sys.path при импортировании и функции open() требуется передавать путь относительно
 известного пути к каталогу со сценарием, а не относительно текущего рабочего каталога,
@@ -19,4 +19,6 @@ import sys
 
 mydir = os.path.dirname(sys.argv[0])  # использовать каталог сценария для open, sys.path
 sys.path.insert(1, os.sep.join([mydir] + ['..'] * 3))  # импорт: PP4E – корень, 3 уровнями выше
-exec(open(os.path.join(mydir, 'textEditor.py')).read())
+
+# exec(open(os.path.join(mydir, 'textEditor.py')).read())
+exec(open(os.path.join(mydir, 'example_11_04.py')).read())
